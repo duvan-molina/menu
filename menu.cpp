@@ -2,9 +2,21 @@
 #include <string>
 using namespace std;
 
-int helloWorld() {
-    cout << "Hello world";
-    return 0;
+int higher() {
+	int number [100], arrayNumber, higherNum = 0;
+	cout <<"Cuantos numeros quieres evaluar: ";
+	cin >>arrayNumber;
+	cout <<"\n";
+	for(int i = 0; i < arrayNumber; i++){
+		cout <<"digite los numeros: ";
+		cin >>number[i+1];
+		if (number[i+1]>higherNum){
+			higherNum = number[i+1];	
+		}
+	}
+	cout <<"\n";
+	cout <<"El numero mayor es: " << higherNum; 
+	return 0;
 }
 
 int average () {
@@ -56,7 +68,7 @@ int moonWeight() {
     cout << "Digita el numero de tu peso en kg ";
     cin >> weight;
     cout << endl;
-    cout <<"Tu peso en la luna es de: " << weight/gravity*earthForce << " Kg";
+    cout <<"Tu peso en la luna es de: " << weight/gravity*earthForce << " Kg" << endl;
     return 0;
 }
 
@@ -64,26 +76,24 @@ int main(){
     int opcion;
     while(opcion) {
     //  menu principal
-    string program[5] = {"Hola mundo", "Peso en la luna", "Promedio", "Programa de jorge",  "Salir"};
+    string program[4] = {"Numero mayor", "Peso en la luna", "Promedio", "Salir"};
     int numberProgram;
-
-    cout << "Eliga el programa que quiere ejecutar \n"<< endl;
-    for(int i = 0; i< 5; i++){
+	cout << "\n";
+    cout << "listas de programas \n"<< endl;
+    for(int i = 0; i< 4; i++){
         cout << program[i] << " -> " << i+1 <<"\n" << endl;
     }
 
-    cout << "Digite el numero del programa ";
+    cout << "¿Que programa deseas ejecutar? ";
     cin >> numberProgram;
     cout << "\n";
 
     switch(numberProgram){
-        case 1 : helloWorld();
+        case 1 : higher();
         break;
         case 2 : moonWeight();
         break;
         case 3:  average();
-        break;
-        case 4:  cout << "Programa de jorge";
         break;
         default : exit(0);
     }
