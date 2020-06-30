@@ -10,12 +10,13 @@ int higher() {
 	for(int i = 0; i < arrayNumber; i++){
 		cout <<"digite los numeros: ";
 		cin >>number[i+1];
-		if (number[i+1]>higherNum){
-			higherNum = number[i+1];	
+		cout << "\n";
+		if (number[i+1] > higherNum){
+			higherNum = number[i+1];
 		}
 	}
 	cout <<"\n";
-	cout <<"El numero mayor es: " << higherNum; 
+	cout <<"El numero mayor es: " << higherNum;
 	return 0;
 }
 
@@ -27,23 +28,20 @@ int average () {
     cout<<"Digite el numero de elementos que va a tener su arreglo: ";
     cin>>arrayNumber;
 
-    for(int i=0;i<arrayNumber;i++){
+    for(int i = 0; i < arrayNumber; i++){
         cout<< "Digite un numero: ";
         cin>>number[i]; //se guarda los elementos que se digiten
     }
 
-
     //Vamos a mostrar lo elementos guardados
-    cout<<"Se mostrara la posicion donde se gravo cada numero: "<<endl;
+    cout<<"Se mostrara la posicion donde se grabo cada numero: "<<endl;
 
-    for(int i=0;i<arrayNumber;i++){
+    for(int i = 0; i < arrayNumber; i++){
         cout<<i<<" -> " <<number[i]<<endl;
     }
-
-
     //Suma de los numeros digitados
 
-    for(int i=0;i<arrayNumber;i++){
+    for(int i = 0; i < arrayNumber; i++){
         sum = sum + number[i];
     }
 
@@ -51,9 +49,8 @@ int average () {
 
     //Promedio de los numeros digitados
 
-    for(int i=0;i<arrayNumber;i++){
+    for(int i=0; i < arrayNumber; i++){
     average = sum / arrayNumber;
-
     }
 
     cout<<"El promedio de los numeros es: "<<average<<endl;
@@ -73,10 +70,10 @@ int moonWeight() {
 }
 
 int main(){
-    int opcion;
-    while(opcion) {
+    int option;
+    while(option) {
     //  menu principal
-    string program[4] = {"Numero mayor", "Peso en la luna", "Promedio", "Salir"};
+    string program[4] = {"Numero mayor", "Peso en la luna", "Promedio", "Desea salir ?"};
     int numberProgram;
 	cout << "\n";
     cout << "listas de programas \n"<< endl;
@@ -84,7 +81,7 @@ int main(){
         cout << program[i] << " -> " << i+1 <<"\n" << endl;
     }
 
-    cout << "¿Que programa deseas ejecutar? ";
+    cout << "Que programa deseas ejecutar? ";
     cin >> numberProgram;
     cout << "\n";
 
@@ -97,10 +94,8 @@ int main(){
         break;
         default : exit(0);
     }
-
     cout << "\n";
     }
 // fin del menu principal
-
     return 0;
 }
