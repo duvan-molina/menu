@@ -45,7 +45,7 @@ int main()
 void menu()
 {
   // system("clear"); if it's in linux
-  system("cls")
+  system("cls");
   string options[] = {"Ingresar", "Mostrar", "Modificar", "Promedio", "Volver al menu principal"};
   int size = sizeof(options) / sizeof(*options);
   for (int i = 0; i < size; i++)
@@ -91,6 +91,7 @@ void show()
   {
     cout << "Posicion [" << i << "]" << " = " << array[i] << "\n";
   }
+  cout <<"pulsa enter para continuar";
   getch();
   menu();
 }
@@ -98,7 +99,7 @@ void show()
 void modify()
 {
   // system("clear"); if it's in linux
-  system("cls")
+  system("cls");
   cout << "Que posicion quieres modificar ";
   cin >> position;
   if (position < length)
@@ -117,7 +118,7 @@ void modify()
 void promedio()
 {
   // system("clear"); if it's in linux
-  system("cls")
+  system("cls");
   double promedio = 0;
   for (int i = 0; i < length; i++)
   {
@@ -132,7 +133,7 @@ void promedio()
 int menuMain()
 {
   // system("clear"); if it's in linux
-  system("cls")
+  system("cls");
   string programs[] = {"Arreglos", "Salario", "Cuadratica", "Promedio", "La hora", "Coordenadas", "Salir"};
   int option;
   int size = sizeof(programs) / sizeof(*programs);
@@ -174,7 +175,7 @@ int menuMain()
 int salary()
 {
   // system("clear"); if it's in linux
-  system("cls")
+  system("cls");
   string apno;
   float hrtr, tahr, subt, impuesto, tota;
   cout << "Calcular nomina  " << endl;
@@ -208,7 +209,7 @@ int salary()
 int quadratic()
 {
   // system("clear"); if it's in linux
-  system("cls")
+  system("cls");
   int a = 0;
   int b = 0;
   int c = 0;
@@ -256,7 +257,7 @@ int quadratic()
 int average()
 {
   // system("clear"); if it's in linux
-  system("cls")
+  system("cls");
   int number[100], arrayNumber;
   int sum = 0;
   int average = 0;
@@ -304,7 +305,7 @@ int average()
 void hour()
 {
   // system("clear"); if it's in linux
-  system("cls")
+  system("cls");
   int hora;
   cout << "digita la hora para visualizar el saludo :\n";
   cin >> hora;
@@ -337,26 +338,26 @@ void hour()
 void coordinates()
 {
   // system("clear"); if it's in linux
-  system("cls")
+  system("cls");
   float x, y;
-  cout << "por favor digite coordenada en x";
-  cin >> y;
-  cout << "por favor digite coordenada en y";
+  cout << "por favor digite coordenada en x: ";
+  cin >> y; 
+  cout << "por favor digite coordenada en y: ";
   cin >> x;
   if ((x > 0) && (y > 0))
-    cout << "punto en el primer cuadrante";
+    cout << "punto en el primer cuadrante ";
 
   else if ((x > 0) && (y < 0))
-    cout << "punto en el segundo cuadrante";
+    cout << "punto en el segundo cuadrante ";
 
   else if ((x < 0) && (y < 0))
-    cout << "punto en el tercer cuadrante";
+    cout << "punto en el tercer cuadrante ";
 
   else if ((x < 0) && (y > 0))
-    cout << "punto en el cuarto cuadrante";
+    cout << "punto en el cuarto cuadrante ";
 
   else
-    cout << "punto en el origen";
+    cout << "punto en el origen \n";
   cout << "Presione intro para terminar el programa ...";
   cin.ignore();
   cin.get();
