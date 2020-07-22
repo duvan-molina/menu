@@ -12,9 +12,9 @@ int array[100];
 int position;
 
 /* programas guias */
-void ingresar();
+void enterokay();
 void show();
-void modificar();
+void modify();
 void promedio();
 
 /* Poner mas bonitos */
@@ -29,57 +29,32 @@ void coordinates();
 int main()
 {
   menuMain();
-  /* int option;
-  while (option)
-  {
-    int array[100], numberArray;
-    int option = 0, length;
-    string menu[3] = {"Insertar", "show", "Promedio"};
-    for (int i = 0; i < 3; i++)
-    {
-      cout << i + 1 << "." << menu[i] << endl;
-    }
-    cout << "Ingresa la opción: ";
-    cin >> option;
-
-    switch (option)
-    {
-    case 1:
-      cout << "Opcion 1";
-      break;
-    case 2:
-      cout << "Opcion 2";
-    default:
-      cout << "Opcion 3";
-      break;
-    }
-    cout << "\n";
-  } */
+ 
   return 0;
 }
 
 /* menu guia */
 void menu()
 {
-  system("clear");
+  //system("clear");
   string options[] = {"Ingresar", "Mostrar", "Modificar", "Promedio", "Volver al menu principal"};
   int size = sizeof(options) / sizeof(*options);
   for (int i = 0; i < size; i++)
   {
     cout << i + 1 << "." << options[i] << "\n";
   }
-  cout << "Ingresa una opción: ";
+  cout << "Ingresa una opcion: ";
   cin >> option;
   switch (option)
   {
   case 1:
-    ingresar();
+    enterokay();
     break;
   case 2:
     show();
     break;
   case 3:
-    modificar();
+    modify();
     break;
   case 4:
     promedio();
@@ -89,9 +64,9 @@ void menu()
   }
 }
 
-void ingresar()
+void enterokay()
 {
-  cout << "De que longitud quieres to arreglo: ";
+  cout << "De que longitud quieres tu arreglo: ";
   cin >> length;
   for (int i = 0; i < length; i++)
   {
@@ -105,17 +80,17 @@ void show()
 {
   for (int i = 0; i < length; i++)
   {
-    cout << "Posición [" << i << "]"
+    cout << "Posicion [" << i << "]"
          << " = " << array[i] << "\n";
   }
   // getch();
   menu();
 }
 
-void modificar()
+void modify()
 {
-  // system("cls"); if it is windows
-  system("clear");
+  system("cls"); 
+  //system("clear");
   cout << "Que posicion quieres modificar ";
   cin >> position;
   if (position < length)
@@ -126,7 +101,7 @@ void modificar()
   }
   else
   {
-    cout << "Ingresa una posición validad";
+    cout << "Ingresa una posicion validad";
     menu();
   }
 }
@@ -145,7 +120,7 @@ void promedio()
 
 int menuMain()
 {
-  string programs[] = {"Arreglos", "Salario", "Cuadrática", "Promedio", "La hora", "Coordenadas", "Salir"};
+  string programs[] = {"Arreglos", "Salario", "Cuadratica", "Promedio", "La hora", "Coordenadas", "Salir"};
   int option;
   int size = sizeof(programs) / sizeof(*programs);
   // cout << size << endl;
@@ -154,7 +129,7 @@ int menuMain()
     cout << i + 1 << "." << programs[i] << "\n";
   }
 
-  cout << "Cual programa desea ejecutar ? ";
+  cout << "seleccione el programa a ejecutar ? ";
   cin >> option;
 
   switch (option)
@@ -182,8 +157,8 @@ int menuMain()
     exit(1);
     break; */
   }
-  // system("cls"); if it is windows
-  system("clear");
+  system("cls");
+  //system("clear");
   return 0;
 }
 
@@ -191,7 +166,7 @@ int salary()
 {
   string apno;
   float hrtr, tahr, subt, impuesto, tota;
-  cout << "Calculos de pagos " << endl;
+  cout << "Calcular nomina  " << endl;
   cout << "Nombres: ";
   cin >> apno;
   cout << endl
@@ -224,14 +199,13 @@ int quadratic()
   int b = 0;
   int c = 0;
 
-  std::cout << "FORMA GENERAL DE LA ECUACION CUADRATICA : ax^2+-bx+-c = 0" << std::endl
-            << std::endl;
+  cout << "FORMA GENERAL DE LA ECUACION CUADRATICA : ax^2+-bx+-c = 0"<<endl;
 
-  std::cout << "Introduzca la variable a:" << std::endl;
+  std::cout << "Introduzca la variable a: ";
   std::cin >> a;
-  std::cout << "Introduzca la variable b:" << std::endl;
+  std::cout << "Introduzca la variable b: ";
   std::cin >> b;
-  std::cout << "Introduzca la variable c:" << std::endl;
+  std::cout << "Introduzca la variable c: ";
   std::cin >> c;
 
   int interiorRaiz = pow(b, 2) - 4 * (a * c);
