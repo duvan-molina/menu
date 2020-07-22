@@ -44,8 +44,8 @@ int main()
 /* menu guia */
 void menu()
 {
-  system("clear");
-  // system("cls") if it's in windows
+  // system("clear"); if it's in linux
+  system("cls")
   string options[] = {"Ingresar", "Mostrar", "Modificar", "Promedio", "Volver al menu principal"};
   int size = sizeof(options) / sizeof(*options);
   for (int i = 0; i < size; i++)
@@ -97,8 +97,8 @@ void show()
 
 void modify()
 {
-  system("clear");
-  // system("cls") if it's in windows
+  // system("clear"); if it's in linux
+  system("cls")
   cout << "Que posicion quieres modificar ";
   cin >> position;
   if (position < length)
@@ -116,8 +116,8 @@ void modify()
 
 void promedio()
 {
-  system("clear");
-  // system("cls") if it's in windows
+  // system("clear"); if it's in linux
+  system("cls")
   double promedio = 0;
   for (int i = 0; i < length; i++)
   {
@@ -131,8 +131,8 @@ void promedio()
 
 int menuMain()
 {
-  system("clear");
-  // system("cls") if it's in windows
+  // system("clear"); if it's in linux
+  system("cls")
   string programs[] = {"Arreglos", "Salario", "Cuadratica", "Promedio", "La hora", "Coordenadas", "Salir"};
   int option;
   int size = sizeof(programs) / sizeof(*programs);
@@ -173,8 +173,8 @@ int menuMain()
 
 int salary()
 {
-  system("clear");
-  // system("cls") if it's in windows
+  // system("clear"); if it's in linux
+  system("cls")
   string apno;
   float hrtr, tahr, subt, impuesto, tota;
   cout << "Calcular nomina  " << endl;
@@ -207,8 +207,8 @@ int salary()
 
 int quadratic()
 {
-  system("clear");
-  // system("cls") if it's in windows
+  // system("clear"); if it's in linux
+  system("cls")
   int a = 0;
   int b = 0;
   int c = 0;
@@ -255,8 +255,8 @@ int quadratic()
 
 int average()
 {
-  system("clear");
-  // system("cls") if it's in windows
+  // system("clear"); if it's in linux
+  system("cls")
   int number[100], arrayNumber;
   int sum = 0;
   int average = 0;
@@ -303,8 +303,8 @@ int average()
 
 void hour()
 {
-  system("clear");
-  // system("cls") if it's in windows
+  // system("clear"); if it's in linux
+  system("cls")
   int hora;
   cout << "digita la hora para visualizar el saludo :\n";
   cin >> hora;
@@ -336,8 +336,8 @@ void hour()
 
 void coordinates()
 {
-  system("clear");
-  // system("cls") if it's in windows
+  // system("clear"); if it's in linux
+  system("cls")
   float x, y;
   cout << "por favor digite coordenada en x";
   cin >> y;
