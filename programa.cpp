@@ -2,19 +2,27 @@
 #include <string>
 // #include <stdlib.h>
 #include <cmath>
-// #include <conio.h>
+#include <conio.h>
 
 using namespace std;
 
+struct Estudiante
+{
+  char nombre[50];
+  int codigo;
+  char programa[50];
+  char email[50];
+};
+void structure();
 int option;
 int length;
 int array[100];
 int position;
 
 /* programas guias */
-void ingresar();
+void enter();
 void show();
-void modificar();
+void modify();
 void promedio();
 
 /* Poner mas bonitos */
@@ -29,32 +37,7 @@ void coordinates();
 int main()
 {
   menuMain();
-  /* int option;
-  while (option)
-  {
-    int array[100], numberArray;
-    int option = 0, length;
-    string menu[3] = {"Insertar", "show", "Promedio"};
-    for (int i = 0; i < 3; i++)
-    {
-      cout << i + 1 << "." << menu[i] << endl;
-    }
-    cout << "Ingresa la opción: ";
-    cin >> option;
 
-    switch (option)
-    {
-    case 1:
-      cout << "Opcion 1";
-      break;
-    case 2:
-      cout << "Opcion 2";
-    default:
-      cout << "Opcion 3";
-      break;
-    }
-    cout << "\n";
-  } */
   return 0;
 }
 
@@ -62,24 +45,25 @@ int main()
 void menu()
 {
   system("clear");
+  // system("cls") if it's in windows
   string options[] = {"Ingresar", "Mostrar", "Modificar", "Promedio", "Volver al menu principal"};
   int size = sizeof(options) / sizeof(*options);
   for (int i = 0; i < size; i++)
   {
     cout << i + 1 << "." << options[i] << "\n";
   }
-  cout << "Ingresa una opción: ";
+  cout << "Ingresa una opcion: ";
   cin >> option;
   switch (option)
   {
   case 1:
-    ingresar();
+    enter();
     break;
   case 2:
     show();
     break;
   case 3:
-    modificar();
+    modify();
     break;
   case 4:
     promedio();
@@ -89,9 +73,9 @@ void menu()
   }
 }
 
-void ingresar()
+void enter()
 {
-  cout << "De que longitud quieres to arreglo: ";
+  cout << "De que longitud quieres tu arreglo: ";
   cin >> length;
   for (int i = 0; i < length; i++)
   {
@@ -105,17 +89,16 @@ void show()
 {
   for (int i = 0; i < length; i++)
   {
-    cout << "Posición [" << i << "]"
-         << " = " << array[i] << "\n";
+    cout << "Posicion [" << i << "]" << " = " << array[i] << "\n";
   }
-  // getch();
+  getch();
   menu();
 }
 
-void modificar()
+void modify()
 {
-  // system("cls"); if it is windows
   system("clear");
+  // system("cls") if it's in windows
   cout << "Que posicion quieres modificar ";
   cin >> position;
   if (position < length)
@@ -126,13 +109,15 @@ void modificar()
   }
   else
   {
-    cout << "Ingresa una posición validad";
+    cout << "Ingresa una posicion validad";
     menu();
   }
 }
 
 void promedio()
 {
+  system("clear");
+  // system("cls") if it's in windows
   double promedio = 0;
   for (int i = 0; i < length; i++)
   {
@@ -140,12 +125,15 @@ void promedio()
     promedio = promedio + array[i];
   }
   cout << "El promedio es: " << promedio / length << "\n";
+  cout << "Presione intro para terminar el programa ...";
   menu();
 }
 
 int menuMain()
 {
-  string programs[] = {"Arreglos", "Salario", "Cuadrática", "Promedio", "La hora", "Coordenadas", "Salir"};
+  system("clear");
+  // system("cls") if it's in windows
+  string programs[] = {"Arreglos", "Salario", "Cuadratica", "Promedio", "La hora", "Coordenadas", "Salir"};
   int option;
   int size = sizeof(programs) / sizeof(*programs);
   // cout << size << endl;
@@ -154,7 +142,7 @@ int menuMain()
     cout << i + 1 << "." << programs[i] << "\n";
   }
 
-  cout << "Cual programa desea ejecutar ? ";
+  cout << "seleccione el programa a ejecutar ? ";
   cin >> option;
 
   switch (option)
@@ -178,25 +166,21 @@ int menuMain()
   case 6:
     coordinates();
     break;
-    /* case 7:
-    exit(1);
-    break; */
   }
-  // system("cls"); if it is windows
-  system("clear");
+  cout << "Presione intro para terminar el programa ...";
   return 0;
 }
 
 int salary()
 {
+  system("clear");
+  // system("cls") if it's in windows
   string apno;
   float hrtr, tahr, subt, impuesto, tota;
-  cout << "Calculos de pagos " << endl;
+  cout << "Calcular nomina  " << endl;
   cout << "Nombres: ";
   cin >> apno;
-  cout << endl
-       << endl
-       << "Horas Trabajadas: ";
+  cout << endl << endl << "Horas Trabajadas: ";
   cin >> hrtr;
   if (hrtr <= 0)
     cout << "No trabajo nada ese pinche vago echalo" << endl;
@@ -214,25 +198,29 @@ int salary()
     cout << "El total a pagar es: " << tota << endl;
     //  << endl;
   }
+  cout << "Presione intro para terminar el programa ...";
+  cin.ignore();
+  cin.get();
   menuMain();
   return 0;
 }
 
 int quadratic()
 {
+  system("clear");
+  // system("cls") if it's in windows
   int a = 0;
   int b = 0;
   int c = 0;
 
-  std::cout << "FORMA GENERAL DE LA ECUACION CUADRATICA : ax^2+-bx+-c = 0" << std::endl
-            << std::endl;
+  cout << "FORMA GENERAL DE LA ECUACION CUADRATICA : ax^2+-bx+-c = 0" << endl;
 
-  std::cout << "Introduzca la variable a:" << std::endl;
-  std::cin >> a;
-  std::cout << "Introduzca la variable b:" << std::endl;
-  std::cin >> b;
-  std::cout << "Introduzca la variable c:" << std::endl;
-  std::cin >> c;
+  cout << "Introduzca la variable a: ";
+  cin >> a;
+  cout << "Introduzca la variable b: ";
+  cin >> b;
+  cout << "Introduzca la variable c: ";
+  cin >> c;
 
   int interiorRaiz = pow(b, 2) - 4 * (a * c);
 
@@ -241,7 +229,7 @@ int quadratic()
 
   if (interiorRaiz < 0)
   {
-    std::cout << "Esta ecuacion no tiene solucion en los numeros reales.";
+    cout << "Esta ecuacion no tiene solucion en los numeros reales.";
   }
   else
   {
@@ -249,24 +237,26 @@ int quadratic()
     segundaSolucion = (-b - sqrt(interiorRaiz)) / (2 * a);
     if (primeraSolucion == segundaSolucion)
     {
-      std::cout << "La unica solucion es:" << primeraSolucion;
+      cout << "La unica solucion es:" << primeraSolucion;
     }
     else
     {
-      std::cout << "La primera solucion es: " << primeraSolucion << std::endl;
-      std::cout << "La segunda solucion es: " << segundaSolucion << std::endl;
-      std::cout << std::endl;
+      cout << "La primera solucion es: " << primeraSolucion << endl;
+      cout << "La segunda solucion es: " << segundaSolucion << endl;
+      cout << endl;
     }
   }
-  std::cout << "Presione intro para terminar el programa ...";
-  std::cin.ignore();
-  std::cin.get();
+  cout << "Presione intro para terminar el programa ...";
+  cin.ignore();
+  cin.get();
   menuMain();
   return 0;
 }
 
 int average()
 {
+  system("clear");
+  // system("cls") if it's in windows
   int number[100], arrayNumber;
   int sum = 0;
   int average = 0;
@@ -304,14 +294,18 @@ int average()
   }
 
   cout << "El promedio de los numeros es: " << average << endl;
+  cout << "Presione intro para terminar el programa ...";
+  cin.ignore();
+  cin.get();
   menuMain();
   return 0;
 }
 
 void hour()
 {
+  system("clear");
+  // system("cls") if it's in windows
   int hora;
-
   cout << "digita la hora para visualizar el saludo :\n";
   cin >> hora;
   if (hora == 0)
@@ -334,14 +328,17 @@ void hour()
       cout << "buenas noches";
     }
   }
+  cout << "Presione intro para terminar el programa ...";
+  cin.ignore();
+  cin.get();
   menuMain();
 }
 
 void coordinates()
 {
-
+  system("clear");
+  // system("cls") if it's in windows
   float x, y;
-
   cout << "por favor digite coordenada en x";
   cin >> y;
   cout << "por favor digite coordenada en y";
@@ -360,4 +357,8 @@ void coordinates()
 
   else
     cout << "punto en el origen";
+  cout << "Presione intro para terminar el programa ...";
+  cin.ignore();
+  cin.get();
+  menuMain();
 }
