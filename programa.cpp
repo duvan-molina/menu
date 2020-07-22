@@ -25,6 +25,7 @@ int average();
 void hour();
 void coordinates();
 
+/* funcion principal */
 int main()
 {
   menuMain();
